@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Uma Última Coisa</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+    <div class="stars"></div>
+
+    <div class="secret-box">
+
+        <h1 style="margin-bottom:50px;">
+            Uma última coisa...
+        </h1>
+
+        <p class="secret-line">
+            Eu nunca esperei nada da morte.
+        </p>
+
+        <br>
+
+        <p class="secret-line">
+            Depois que te conheci...
+        </p>
+
+        <br>
+
+        <p class="secret-line">
+            Desejo com todas as forças que o fim da minha vida seja o recomeço de outra vida com você.
+        </p>
+
+        <br><br>
+
+        <p class="secret-line highlight">
+    EU TE ESCOLHERIA
+    <br><br>
+    EM TODAS AS VIDAS.
+        </p>
+
+        <br><br>
+
+        <div class="secret-line">
+
+            <button
+                id="showVideoBtn"
+                class="next-btn">
+
+                Assistir
+
+            </button>
+
+        </div>
+
+        <div
+            id="videoContainer"
+            style="display:none; margin-top:30px;">
+
+            <video controls>
+
+                <source
+                    src="assets/videos/video.mp4"
+                    type="video/mp4">
+
+            </video>
+
+        </div>
+
+    </div>
+
+    <div class="buttons">
+
+        <a href="album.html">
+            <button class="back-btn">
+                Voltar
+            </button>
+        </a>
+
+        <a href="musicas.html">
+            <button class="next-btn">
+                Continuar →
+            </button>
+        </a>
+
+    </div>
+
+    <script src="js/app.js"></script>
+
+    <script>
+
+        const showVideoBtn =
+            document.getElementById("showVideoBtn");
+
+        const videoContainer =
+            document.getElementById("videoContainer");
+
+        if(showVideoBtn){
+
+            showVideoBtn.addEventListener("click",()=>{
+
+                videoContainer.style.display = "block";
+
+                showVideoBtn.style.display = "none";
+
+            });
+
+        }
+
+    </script>
+
+</body>
+
+</html>

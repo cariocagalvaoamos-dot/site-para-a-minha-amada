@@ -1,0 +1,575 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Cormorant+Garamond:wght@300;400;500;600&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Cormorant Garamond',serif;
+
+    color:#f5f0e8;
+
+    min-height:100vh;
+
+    overflow-x:hidden;
+
+    background:
+    radial-gradient(circle at top,#18233d 0%,#080b14 45%,#05070d 100%);
+}
+
+/* ESTRELAS */
+
+.stars,
+.stars::before,
+.stars::after{
+
+    position:fixed;
+
+    inset:0;
+
+    content:"";
+
+    pointer-events:none;
+}
+
+.stars{
+
+    background-image:
+    radial-gradient(2px 2px at 20px 30px,#fff,transparent),
+    radial-gradient(2px 2px at 40px 70px,#fff,transparent),
+    radial-gradient(1px 1px at 90px 40px,#fff,transparent),
+    radial-gradient(2px 2px at 130px 80px,#fff,transparent),
+    radial-gradient(1px 1px at 180px 20px,#fff,transparent);
+
+    background-size:250px 250px;
+
+    opacity:.35;
+
+    animation:starsMove 120s linear infinite;
+}
+
+.stars::before{
+
+    background-image:
+    radial-gradient(2px 2px,#fff,transparent);
+
+    background-size:180px 180px;
+
+    opacity:.15;
+
+    animation:starsMove 90s linear infinite;
+}
+
+.stars::after{
+
+    background-image:
+    radial-gradient(1px 1px,#fff,transparent);
+
+    background-size:120px 120px;
+
+    opacity:.1;
+
+    animation:starsMove 60s linear infinite;
+}
+
+@keyframes starsMove{
+
+    from{
+        transform:translateY(0);
+    }
+
+    to{
+        transform:translateY(-500px);
+    }
+}
+
+/* INDEX */
+
+.hero{
+
+    min-height:100vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:30px;
+
+    animation:fadeUp 1.4s ease;
+}
+
+.hero h1{
+
+    font-family:'Playfair Display',serif;
+
+    font-size:4rem;
+
+    margin-bottom:25px;
+}
+
+.intro{
+
+    max-width:700px;
+
+    font-size:1.5rem;
+
+    line-height:1.8;
+
+    margin-bottom:50px;
+}
+
+/* BOTÕES */
+
+.main-btn,
+.next-btn,
+.back-btn{
+
+    border:none;
+
+    cursor:pointer;
+
+    padding:14px 30px;
+
+    border-radius:999px;
+
+    transition:.35s;
+
+    font-size:1rem;
+
+    font-family:'Playfair Display',serif;
+}
+
+.main-btn,
+.next-btn{
+
+    background:#d4b483;
+
+    color:#111;
+}
+
+.main-btn:hover,
+.next-btn:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:
+    0 0 25px rgba(212,180,131,.35);
+}
+
+.back-btn{
+
+    background:rgba(255,255,255,.08);
+
+    color:white;
+
+    border:1px solid rgba(255,255,255,.15);
+}
+
+/* NAVEGAÇÃO */
+
+.buttons{
+
+    position:fixed;
+
+    left:0;
+
+    bottom:20px;
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    padding:0 20px;
+
+    z-index:50;
+
+    pointer-events:none;
+}
+
+.buttons a{
+
+    pointer-events:auto;
+}
+
+/* CARTA */
+
+.content{
+
+    width:min(800px,92%);
+
+    margin:70px auto 130px;
+
+    animation:fadeUp 1s ease;
+}
+
+.paper{
+
+    background:#efe7da;
+
+    color:#222;
+
+    border-radius:18px;
+
+    padding:45px;
+
+    box-shadow:
+    0 20px 60px rgba(0,0,0,.45);
+}
+
+.paper h1{
+
+    text-align:center;
+
+    font-family:'Playfair Display',serif;
+
+    margin-bottom:30px;
+}
+
+.paper p{
+
+    line-height:2.2;
+
+    font-size:1.35rem;
+
+    text-align:justify;
+}
+
+/* POEMA */
+
+.poem{
+
+    min-height:100vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:30px;
+}
+
+.poem h1{
+
+    font-family:'Playfair Display',serif;
+
+    margin-bottom:40px;
+
+    font-size:3rem;
+}
+
+.poem p{
+
+    font-size:1.8rem;
+
+    line-height:2;
+}
+
+/* ÁLBUM */
+
+.album{
+
+    min-height:100vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:30px;
+
+    text-align:center;
+}
+
+.polaroid{
+
+    background:white;
+
+    padding:15px 15px 60px;
+
+    border-radius:4px;
+
+    box-shadow:
+    0 20px 60px rgba(0,0,0,.5);
+
+    transform:rotate(-1deg);
+
+    transition:.4s;
+}
+
+.polaroid:hover{
+
+    transform:rotate(0deg) scale(1.01);
+}
+
+#photo{
+
+    width:min(750px,85vw);
+
+    max-height:65vh;
+
+    object-fit:cover;
+
+    display:block;
+}
+
+#counter{
+
+    margin-top:25px;
+
+    color:#d4b483;
+
+    font-size:1.3rem;
+
+    letter-spacing:2px;
+}
+
+#memoryText{
+
+    max-width:700px;
+
+    margin:25px auto;
+
+    line-height:1.8;
+
+    font-size:1.4rem;
+}
+
+.fade{
+
+    animation:fadePhoto .6s ease;
+}
+
+@keyframes fadePhoto{
+
+    from{
+        opacity:.2;
+        transform:scale(.98);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+/* SEGREDO */
+
+.secret-box{
+
+    max-width:900px;
+
+    margin:80px auto;
+
+    text-align:center;
+
+    padding:40px;
+}
+
+.secret-line{
+
+    opacity:0;
+
+    transform:translateY(20px);
+
+    transition:.8s;
+}
+
+.secret-line.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+}
+
+.highlight{
+
+    color:#d4b483;
+
+    font-size:2.4rem;
+
+    font-weight:700;
+
+    letter-spacing:2px;
+
+    text-shadow:
+    0 0 25px rgba(212,180,131,.35);
+}
+
+video{
+
+    width:100%;
+
+    border-radius:18px;
+
+    margin-top:30px;
+}
+
+/* MÚSICAS */
+
+.music-grid{
+
+    width:min(1000px,92%);
+
+    margin:40px auto 120px;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(240px,1fr));
+
+    gap:16px;
+}
+
+.music-card{
+
+    background:rgba(255,255,255,.06);
+
+    backdrop-filter:blur(10px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    padding:20px;
+
+    border-radius:18px;
+
+    transition:.3s;
+}
+
+.music-card:hover{
+
+    transform:translateY(-5px);
+}
+
+/* FINAL */
+
+.final{
+
+    min-height:100vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:30px;
+}
+
+.final h1{
+
+    font-family:'Playfair Display',serif;
+
+    margin-bottom:30px;
+}
+
+.final p{
+
+    font-size:1.7rem;
+
+    line-height:2;
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(30px);
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+    }
+}
+
+@media(max-width:768px){
+
+    .hero h1{
+        font-size:3rem;
+    }
+
+    .intro{
+        font-size:1.25rem;
+    }
+
+    .paper{
+        padding:30px;
+    }
+
+    .paper p{
+        font-size:1.2rem;
+    }
+
+    .poem h1{
+        font-size:2.2rem;
+    }
+
+    .poem p{
+        font-size:1.4rem;
+    }
+
+    .highlight{
+        font-size:1.6rem;
+    }
+}
+.secret-line{
+
+    font-size:1.5rem;
+
+    line-height:1.8;
+}
+
+.secret-line.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+}
+
+#videoContainer{
+
+    animation:fadeUp .8s ease;
+}
+
+body{
+
+    opacity:1;
+
+    transition:opacity .5s ease;
+}
+
+body.fade-out{
+
+    opacity:0;
+}
